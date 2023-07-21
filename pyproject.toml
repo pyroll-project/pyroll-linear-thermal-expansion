@@ -37,7 +37,7 @@ Homepage = "https://pyroll.readthedocs.io"
 
 # change these URLs to your needs
 Repository = "https://github.com/pyroll-project/pyroll-plugin-template"
-Documentation = "https://github.com/pyroll-project/pyroll-plugin-template/blob/main/docs/docs.pdf"
+Documentation = "https://github.com/pyroll-project/pyroll-plugin-template/blob/main/docs/docs.md"
 
 [build-system]
 requires = ["hatchling"]
