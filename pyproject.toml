@@ -36,8 +36,8 @@ dynamic = ["version"]
 Homepage = "https://pyroll.readthedocs.io"
 
 # change these URLs to your needs
-Repository = "https://github.com/pyroll-project/pyroll-plugin-template"
-Documentation = "https://github.com/pyroll-project/pyroll-plugin-template/blob/main/docs/docs.md"
+Repository = "https://github.com/pyroll-project/pyroll-linear-thermal-expansion"
+Documentation = "https://github.com/pyroll-project/pyroll-linear-thermal-expansion/blob/main/docs/docs.md"
 
 [build-system]
 requires = ["hatchling"]

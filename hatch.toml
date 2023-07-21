@@ -13,15 +13,6 @@ dependencies = [
     "pyroll-integral-thermal ~= 2.0",
 ]
 
-[envs.docs]
-path = ""
-dependencies = [
-    "pygments ~= 2.0"
-]
-
-[envs.docs.scripts]
-build = "latexmk --cd --pdf --shell-escape docs/docs" # compile LaTeX docs with latexmk
-
 [envs.test]
 path = ""
 
