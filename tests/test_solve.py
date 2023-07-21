@@ -18,7 +18,6 @@ def test_solve(tmp_path: Path, caplog):
         flow_stress=100e6,
         density=7.5e3,
         thermal_capacity=690,
-        thermal_expansion_factor=1.5e-5,
         length=100,
     )
 

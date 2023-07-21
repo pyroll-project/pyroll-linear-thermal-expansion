@@ -7,6 +7,13 @@ Profile.thermal_expansion_coefficient = Hook[float]()
 """Linear thermal expansion factor of the profile material."""
 
 
+@Profile.thermal_expansion_coefficient
+def steel_default(self: Profile):
+    """Default approximate value for general steel materials."""
+    if "steel" in self.material:
+        return 15.0e-6
+
+
 @Transport.OutProfile.cross_section
 def transport_thermal_expansion_cross_section(self: Transport.OutProfile, cycle):
     """Scaling the cross-section in dependence on temperature change."""
