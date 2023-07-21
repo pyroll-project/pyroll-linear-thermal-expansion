@@ -7,7 +7,8 @@ from pyroll.core import Profile, PassSequence, RollPass, Roll, CircularOvalGroov
 def test_solve(tmp_path: Path, caplog):
     caplog.set_level(logging.DEBUG, logger="pyroll")
 
-    import pyroll.sample_plugin
+    import pyroll.linear_thermal_expansion
+    import pyroll.integral_thermal
 
     in_profile = Profile.round(
         diameter=30e-3,
@@ -17,6 +18,8 @@ def test_solve(tmp_path: Path, caplog):
         flow_stress=100e6,
         density=7.5e3,
         thermal_capacity=690,
+        thermal_expansion_factor=1.5e-5,
+        length=100,
     )
 
     sequence = PassSequence([
@@ -58,5 +61,12 @@ def test_solve(tmp_path: Path, caplog):
         print("\nLog:")
         print(caplog.text)
 
-    assert sequence.in_profile.new_hook == 42
-    assert sequence.out_profile.new_hook == 42
+    t0 = sequence[1]
+    assert t0.in_profile.cross_section.area > t0.out_profile.cross_section.area
+    assert t0.in_profile.length > t0.out_profile.length
+
+    rp0 = sequence[0]
+    if rp0.in_profile.temperature > rp0.out_profile.temperature:
+        assert rp0.in_profile.length * rp0.elongation > rp0.out_profile.length
+    else:
+        assert rp0.in_profile.length * rp0.elongation < rp0.out_profile.length

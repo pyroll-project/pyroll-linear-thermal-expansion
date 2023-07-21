@@ -4,12 +4,13 @@ packages = [
 ]
 
 [version]
-path = "pyroll/sample_plugin/__init__.py"
+path = "pyroll/linear_thermal_expansion.py"
 
 [envs.default]
 path = ".venv"
 dependencies = [
-    "pytest ~= 7.0"
+    "pytest ~= 7.0",
+    "pyroll-integral-thermal ~= 2.0",
 ]
 
 [envs.docs]
