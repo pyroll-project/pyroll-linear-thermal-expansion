@@ -21,7 +21,7 @@ thermal expansion is considered to go into length of the workpiece.
 Therefore, the length is scaled by thrice the usual length expansion factor.
 
 The expansion coefficient $\alpha$ is defined as hook `Profile.thermal_expansion_coefficient`.
-A default implementation for general steel materials is provided with value $15.0 \cdot 10^{-6} \mathrm{K^-1}$, which reacts on the key `"steel"` in `Profile.material`.
+A default implementation for general steel materials is provided with value $15.0 \cdot 10^{-6} \mathrm{K^{-1}}$, which reacts on the key `"steel"` in `Profile.material`.
 Give your own value as constant parameter on profile creation or by an hook implementation.
 
 Non-linear expansion behavior can be mimicked by implementing a hook function like below in dependence of the profile temperature.
