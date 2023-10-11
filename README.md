@@ -1,9 +1,11 @@
-# PyRoll Linear Thermal Expansion Plugin
+# PyRolL Linear Thermal Expansion Plugin
 
 Plugin for PyRolL providing linear expansion resp. shrinkage of the workpiece with changing temperature.
 
-See the [docs](docs/docs.md) for details.
+or the docs, see [here](docs/docs.pdf).
 
-To run the tests use
+FThis project is licensed under the [BSD-3-Clause license](LICENSE).
 
-    hatch run test:all
+The package is available via PyPi and can be installed with
+
+    pip install pyroll-linear-thermal-expansion

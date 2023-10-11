@@ -13,6 +13,9 @@ dependencies = [
     "pyroll-integral-thermal ~= 2.0",
 ]
 
+[envs.docs.scripts]
+build = "pandoc -o docs/docs.pdf docs/docs.md"
+
 [envs.test]
 path = ""
 

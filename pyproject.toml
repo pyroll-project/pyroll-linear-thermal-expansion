@@ -1,10 +1,10 @@
 [project]
-name = "pyroll-linear-thermal-expansion" # insert the name of yout plugin here
-description = "Plugin for PyRoll providing approximate thermal expansion behavior using thermal expansion factor." # edit the description
+name = "pyroll-linear-thermal-expansion"
+description = "Plugin for PyRoll providing approximate thermal expansion behavior using thermal expansion factor."
 authors = [
     { name = "Max Weiner", email = "max.weiner@imf.tu-freiberg.de" }
 ]
-license = "BSD-3-Clause" # may be changed to your wishes
+license = "BSD-3-Clause"
 requires-python = ">=3.9, <4.0"
 
 dependencies = [
