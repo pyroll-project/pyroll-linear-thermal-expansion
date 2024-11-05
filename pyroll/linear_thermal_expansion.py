@@ -1,6 +1,6 @@
 VERSION = "2.1.0"
 
-from pyroll.core import RollPass, Transport, Profile, Hook
+from pyroll.core import Transport, Profile, Hook, BaseRollPass
 from shapely.affinity import scale
 
 Profile.thermal_expansion_coefficient = Hook[float]()
@@ -42,15 +42,15 @@ def transport_thermal_expansion_length(self: Transport.OutProfile, cycle):
     return orig_length * scale_factor
 
 
-@RollPass.OutProfile.length
-def roll_pass_thermal_expansion_length(self: RollPass.OutProfile, cycle):
+@BaseRollPass.OutProfile.length
+def roll_pass_thermal_expansion_length(self: BaseRollPass.OutProfile, cycle):
     """Scaling the length in dependence on temperature change.
      Since cross-section is constrained by contour and spread, full expansion goes to length."""
 
     if cycle:
         return None
 
-    orig_length = RollPass.OutProfile.length.get_result(self) or self.roll_pass.in_profile.length
+    orig_length = BaseRollPass.OutProfile.length.get_result(self) or self.roll_pass.in_profile.length
     scale_factor = (1 + (self.temperature - self.roll_pass.in_profile.temperature)
                     * 3 * self.thermal_expansion_coefficient)
 
