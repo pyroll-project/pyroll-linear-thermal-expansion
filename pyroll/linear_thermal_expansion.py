@@ -1,4 +1,4 @@
-VERSION = "2.1.1"
+VERSION = "3.0"
 
 from pyroll.core import Transport, Profile, Hook, BaseRollPass
 from shapely.affinity import scale
